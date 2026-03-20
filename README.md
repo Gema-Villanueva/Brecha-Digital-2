@@ -15,8 +15,11 @@ En la línea del programa **Brecha-Digital**, la idea es apoyar decisiones que o
 | `dataset_maestro_limpio.csv` | Tabla resultante tras unir las fuentes (17 comunidades autónomas, 2021) |
 | `digital-gap-simulator/` | **Digital Gap Simulator**: app React + Vite que simula políticas con el CSV (ver su `README.md`) |
 | `requirements.txt` | Lista de dependencias de Python para instalación reproducible (`pip install -r requirements.txt`) |
+| `mapa_brecha_digital.html` | Mapa coroplético interactivo (Folium → Leaflet + D3): comunidades coloreadas según la brecha digital; **GeoJSON y estilos embebidos** en el HTML; capas y leyenda; requiere **conexión a internet** (CDN y mapas base Carto) |
 
-En el **ecosistema completo Brecha-Digital** (otros repositorios o entregas del mismo proyecto) suelen aparecer además, a modo de referencia: un notebook con **datos sintéticos** y coeficientes exportables para un simulador; una app **React + Vite** («Digital Poverty Simulator») con sliders (ingreso, educación, desempleo), nivel de internet, riesgo y prioridad, y sección tipo «Mejora el distrito»; un **`simulator.html`** con mapa de España (p. ej. Leaflet + GeoJSON), regiones coloreadas y nombres visibles, panel con sliders, cartas y progreso global (p. ej. «X de 19 regiones con riesgo bajo»); una **API opcional** (Node.js, Express, CORS) con `POST /predict` y cuerpo `{ income, unemployment, education }` devolviendo `{ internet_access, priority }`; y recursos de **mapa con datos INE** (p. ej. `mapa_brecha_digital.html` o scripts Python asociados). En ese diseño, el front puede calcular la predicción **en el navegador** con la misma fórmula de regresión que el notebook, **sin depender del backend**. Además existe en este repositorio la carpeta **`digital-gap-simulator/`** (juego de simulación con el dataset). El resto de piezas del ecosistema (otros simuladores, API, etc.) pueden no estar presentes: el núcleo aquí es el análisis con datos reales y el cuaderno indicado arriba.
+**Este repositorio incluye `mapa_brecha_digital.html`**, exportado con Folium: visualización en el navegador sin servidor propio, con datos geográficos incrustados en el archivo.
+
+En el **ecosistema completo Brecha-Digital** (otros repositorios o entregas del mismo proyecto) suelen aparecer además, a modo de referencia: un notebook con **datos sintéticos** y coeficientes exportables para un simulador; una app **React + Vite** («Digital Poverty Simulator») con sliders (ingreso, educación, desempleo), nivel de internet, riesgo y prioridad, y sección tipo «Mejora el distrito»; un **`simulator.html`** con mapa de España (p. ej. Leaflet + GeoJSON), regiones coloreadas y nombres visibles, panel con sliders, cartas y progreso global (p. ej. «X de 19 regiones con riesgo bajo»); una **API opcional** (Node.js, Express, CORS) con `POST /predict` y cuerpo `{ income, unemployment, education }` devolviendo `{ internet_access, priority }`; y otros **mapas o scripts Python** asociados a datos del INE. En ese diseño, el front puede calcular la predicción **en el navegador** con la misma fórmula de regresión que el notebook, **sin depender del backend**. En este repositorio están el cuaderno principal, el CSV, el mapa HTML indicado arriba y la carpeta **`digital-gap-simulator/`**. El resto de piezas del ecosistema (otros simuladores, API, etc.) pueden no estar presentes: el núcleo aquí es el análisis con datos reales y el cuaderno indicado en la tabla.
 
 ---
 
@@ -98,6 +101,10 @@ En la primera celda del cuaderno aparece la insignia **Open in Colab**: permite 
 4. La primera celda de código instala paquetes con `pip` solo en **Google Colab**; en local suele bastar con el paso 2.
 
 Para trabajar **sin volver a descargar** desde la web, puedes usar la ruta local a `dataset_maestro_limpio.csv` en lugar de reconstruir `df` desde las URL en bruto; si hace falta, añade una celda `pd.read_csv("dataset_maestro_limpio.csv")`.
+
+### Mapa coroplético (`mapa_brecha_digital.html`)
+
+Abre el archivo desde la **raíz del repositorio** en tu navegador (doble clic en el archivo o arrastrarlo a una ventana). Hace falta **conexión a internet** para los CDN (Leaflet, Bootstrap, D3, etc.) y la capa base Carto. Si en GitHub activas **GitHub Pages** (rama `main`, carpeta del sitio en la raíz del repo o en `/docs`), podrás compartir una URL estable al HTML una vez publicado.
 
 ### Digital Gap Simulator (React)
 
