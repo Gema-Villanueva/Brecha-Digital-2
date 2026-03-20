@@ -5,12 +5,6 @@ Proyecto de investigación sobre la **brecha digital** en las comunidades autón
 En la línea del programa **Brecha-Digital**, la idea es apoyar decisiones que optimicen la **entrega de ayudas públicas**: a escala territorial se estima el riesgo de **exclusión digital** y se puede derivar una **prioridad de intervención**. Aquí el territorio de trabajo son las **comunidades autónomas** y los datos son **oficiales (INE y Ministerio de Educación)**, no un entorno de simulación web.
 
 **Idea central:** *territorio → se estima el nivel de riesgo de exclusión digital (p. ej. acceso a internet frente a contexto socioeconómico) → se asigna prioridad de ayuda*.
-
-## Enlace al repositorio
-
-- **GitHub:** [https://github.com/Gema-Villanueva/Brecha-Digital-2](https://github.com/Gema-Villanueva/Brecha-Digital-2)
-- El repositorio debe ser **público** o el profesor debe tener **acceso** (invitación con permiso de lectura al repositorio o a la organización).
-
 ---
 
 ## Contenido del repositorio
