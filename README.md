@@ -138,6 +138,13 @@ Si en el visor o en Excel los nombres de las regiones aparecen como `AndalucÃ­
 
 ---
 
+## Próximos pasos de trabajo
+
+1. **Publicación en dominio:** desplegar el proyecto (por ejemplo el simulador **Digital Gap Simulator** y, si aplica, la documentación o vistas estáticas) en un **dominio propio** o en un servicio de hosting (Vercel, Netlify, GitHub Pages, etc.) para que sea accesible de forma estable y compartible.
+2. **Análisis temporal ampliado:** repetir el pipeline del cuaderno con **datos de años posteriores** (actualizando descargas desde el INE y el Ministerio de Educación), regenerar el dataset maestro y comparar evolución de la brecha digital entre ejercicios.
+
+---
+
 ## Licencia
 
 Este repositorio no incluye un archivo de licencia; si publicas o reutilizas el trabajo, confirma las condiciones con la persona titular del repositorio.
