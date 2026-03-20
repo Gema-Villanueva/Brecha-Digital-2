@@ -1,0 +1,12 @@
+{
+  "name": "brecha-digital-2",
+  "private": true,
+  "description": "Raíz del repo: el simulador web vive en digital-gap-simulator/",
+  "scripts": {
+    "dev": "npm run dev --prefix digital-gap-simulator",
+    "build": "npm run build --prefix digital-gap-simulator",
+    "preview": "npm run preview --prefix digital-gap-simulator",
+    "lint": "npm run lint --prefix digital-gap-simulator",
+    "install:simulator": "npm install --prefix digital-gap-simulator"
+  }
+}

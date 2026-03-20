@@ -19,9 +19,10 @@ En la línea del programa **Brecha-Digital**, la idea es apoyar decisiones que o
 |---------|-------------|
 | `ultimasmodificaciones_brechasDigitales.ipynb` | Pipeline completo: descarga desde el INE y el Ministerio de Educación, limpieza, visualizaciones, correlaciones, regresión y red neuronal |
 | `dataset_maestro_limpio.csv` | Tabla resultante tras unir las fuentes (17 comunidades autónomas, 2021) |
+| `digital-gap-simulator/` | **Digital Gap Simulator**: app React + Vite que simula políticas con el CSV (ver su `README.md`) |
 | `requirements.txt` | Lista de dependencias de Python para instalación reproducible (`pip install -r requirements.txt`) |
 
-En el **ecosistema completo Brecha-Digital** (otros repositorios o entregas del mismo proyecto) suelen aparecer además, a modo de referencia: un notebook con **datos sintéticos** y coeficientes exportables para un simulador; una app **React + Vite** («Digital Poverty Simulator») con sliders (ingreso, educación, desempleo), nivel de internet, riesgo y prioridad, y sección tipo «Mejora el distrito»; un **`simulator.html`** con mapa de España (p. ej. Leaflet + GeoJSON), regiones coloreadas y nombres visibles, panel con sliders, cartas y progreso global (p. ej. «X de 19 regiones con riesgo bajo»); una **API opcional** (Node.js, Express, CORS) con `POST /predict` y cuerpo `{ income, unemployment, education }` devolviendo `{ internet_access, priority }`; y recursos de **mapa con datos INE** (p. ej. `mapa_brecha_digital.html` o scripts Python asociados). En ese diseño, el front puede calcular la predicción **en el navegador** con la misma fórmula de regresión que el notebook, **sin depender del backend**. **Este repositorio no incluye esas carpetas ni archivos**: se centra en el análisis con datos reales y el cuaderno indicado arriba.
+En el **ecosistema completo Brecha-Digital** (otros repositorios o entregas del mismo proyecto) suelen aparecer además, a modo de referencia: un notebook con **datos sintéticos** y coeficientes exportables para un simulador; una app **React + Vite** («Digital Poverty Simulator») con sliders (ingreso, educación, desempleo), nivel de internet, riesgo y prioridad, y sección tipo «Mejora el distrito»; un **`simulator.html`** con mapa de España (p. ej. Leaflet + GeoJSON), regiones coloreadas y nombres visibles, panel con sliders, cartas y progreso global (p. ej. «X de 19 regiones con riesgo bajo»); una **API opcional** (Node.js, Express, CORS) con `POST /predict` y cuerpo `{ income, unemployment, education }` devolviendo `{ internet_access, priority }`; y recursos de **mapa con datos INE** (p. ej. `mapa_brecha_digital.html` o scripts Python asociados). En ese diseño, el front puede calcular la predicción **en el navegador** con la misma fórmula de regresión que el notebook, **sin depender del backend**. Además existe en este repositorio la carpeta **`digital-gap-simulator/`** (juego de simulación con el dataset). El resto de piezas del ecosistema (otros simuladores, API, etc.) pueden no estar presentes: el núcleo aquí es el análisis con datos reales y el cuaderno indicado arriba.
 
 ---
 
@@ -103,6 +104,12 @@ En la primera celda del cuaderno aparece la insignia **Open in Colab**: permite 
 4. La primera celda de código instala paquetes con `pip` solo en **Google Colab**; en local suele bastar con el paso 2.
 
 Para trabajar **sin volver a descargar** desde la web, puedes usar la ruta local a `dataset_maestro_limpio.csv` en lugar de reconstruir `df` desde las URL en bruto; si hace falta, añade una celda `pd.read_csv("dataset_maestro_limpio.csv")`.
+
+### Digital Gap Simulator (React)
+
+En la carpeta [`digital-gap-simulator/`](digital-gap-simulator/README.md): `npm install` y `npm run dev` (Node.js 20+ recomendado). Usa una copia del CSV en `public/` para inicializar la partida.
+
+Desde la **raíz del repositorio** también puedes ejecutar `npm run install:simulator` (primera vez) y luego `npm run dev`: el `package.json` de la raíz reenvía los scripts a `digital-gap-simulator/`.
 
 ### Simulador y API (proyecto Brecha-Digital completo)
 
